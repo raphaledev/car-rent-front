@@ -1,16 +1,14 @@
 import { useParams } from "react-router-dom";
-import { useState, useEffect, useContext } from "react";
-import { DateContext } from "./Home";
-import CarList from "./CarList";
+import { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import axios from "axios";
 import CarItem from "./CarItem";
 
 const Booking = () => {
     const [cars, setCars] = useState(null);
-    const value = useContext(DateContext);
     const { id } = useParams();
 
+// http://localhost:5000/api/cars
     useEffect(() => {
         axios.get("https://car-rent-mern.herokuapp.com/api/cars").then((result) => {
             setCars(result.data);
@@ -34,7 +32,6 @@ const Booking = () => {
                     <h1>Loading...</h1>
                     )}
                 </div>
-                <div className="">{value}</div>
                 <div className="col-start-1 md:col-start-2 xl:col-start-3">
                     <button className="w-64 text-blue-500 font-bold border-solid border-2 border-blue">Confirmer la réservation</button>
                 </div>

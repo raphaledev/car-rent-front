@@ -1,10 +1,8 @@
-import {useState, useEffect, createContext} from "react";
+import {useState, useEffect} from "react";
 import Datepicker from "react-tailwindcss-datepicker";
 import axios from "axios";
 import Navbar from "./Navbar";
-import CarList from "./CarList"
-
-export const DateContext = createContext();
+import CarList from "./CarList";
 
 const Home = () => {
     const [cars, setCars] = useState(null);
@@ -13,11 +11,8 @@ const Home = () => {
         endDate: null,
     });
 
-
-
     const [period, setPeriod] = useState(0);
     const [bookingDays, setBookingDays] = useState([]);
-    // const dateRange = [startDate, endDate]
 
     const days = d => new Date(d).getTime()/86400000;
 
@@ -102,9 +97,7 @@ const Home = () => {
                 </div>
                 <div className="">
                     {cars ? (
-                        <DateContext.Provider value={dateFormat(value.startDate)}>
-                            <CarList cars={cars.filter(car => isAvailable(car.unavailableDates, bookingDays))} />
-                        </DateContext.Provider>
+                        <CarList cars={cars.filter(car => isAvailable(car.unavailableDates, bookingDays))} />
                     ) : (
                     <h1>Loading...</h1>
                     )}

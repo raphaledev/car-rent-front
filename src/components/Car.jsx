@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 function Car (props) {
-    const PF = "http://localhost:5000/uploads/";
+    const PF = "https://car-rent-mern.herokuapp.com/uploads/";
     return (
     <div className="flex flex-col my-4">
         <img className="rounded-lg mb-2 h-80" src={PF + props.photos} alt={props.brand} />
