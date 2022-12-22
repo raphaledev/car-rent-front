@@ -12,9 +12,6 @@ function Car (props) {
         <div>
             <p className="m-4 whitespace-pre-line font-sans font-medium">{props.desc}</p>
         </div>
-        {/* <div>
-            <p className="m-4 whitespace-pre-line font-sans font-medium">Total :  {props.price}</p>
-        </div> */}
     </div>
 );
 }

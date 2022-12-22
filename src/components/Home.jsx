@@ -56,7 +56,6 @@ const Home = () => {
     useEffect(() => {
         axios.get("https://car-rent-mern.herokuapp.com/api/cars").then((result) => {
             setCars(result.data);
-            // setNb(result.data.length);
         });
         }, []);
     
