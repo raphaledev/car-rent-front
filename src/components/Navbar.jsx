@@ -12,7 +12,7 @@ const Navbar = () => {
                 </Link> 
             </div>
             <div>   
-                <Link to={'/dashbord'}>
+                <Link to={'/login'}>
                     <FontAwesomeIcon icon={faUserGear} className="mx-3"/>
                     <span>Admin</span>
                 </Link>

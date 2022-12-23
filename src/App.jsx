@@ -3,6 +3,7 @@ import Home from "./components/Home";
 import Dashbord from "./components/Dashbord";
 import CarForm from "./components/CarForm";
 import Booking from "./components/Booking";
+import Login from "./components/Auth/Login";
 
 function App() {
     return (
@@ -12,6 +13,7 @@ function App() {
           <Route path="/dashbord" element={<Dashbord />}/>
           <Route path="/carform" element={<CarForm />}/>
           <Route path="/book/:id" element={<Booking />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </div>
     );
