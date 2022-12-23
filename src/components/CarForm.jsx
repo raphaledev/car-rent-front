@@ -25,11 +25,11 @@ const CarForm = () => {
             data.append("file", file);
             car.photos = filename;
             try {
-                await axios.post('http://localhost:5000/api/upload', data);
+                await axios.post('https://car-rent-mern.herokuapp.com/api/upload', data);
             } catch (err) {}
         }
 
-        const response = await fetch('http://localhost:5000/api', {
+        const response = await fetch('https://car-rent-mern.herokuapp.com/api', {
             method: 'POST',
             body: JSON.stringify(car),
             headers: {
